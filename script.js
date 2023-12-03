@@ -35,4 +35,12 @@ function displayWord() {
     popup.style.display = "flex";
   }
 }
+
+//Keydown letter press
+window.addEventListener("keydown", (e) => {
+  if (e.code >= "KeyA" && e.code <= "KeyZ") {
+    console.log(123);
+  }
+});
+
 displayWord();
