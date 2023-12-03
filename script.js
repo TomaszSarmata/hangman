@@ -53,7 +53,7 @@ function showNotification() {
 //Keydown letter press
 window.addEventListener("keydown", (e) => {
   if (e.code >= "KeyA" && e.code <= "KeyZ") {
-    const letter = e.code;
+    const letter = e.code.substring(3).toLowerCase();
 
     if (selectedWord.includes(letter)) {
       if (!correctLetters.includes(letter)) {
