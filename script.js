@@ -1,6 +1,6 @@
 const wordEl = document.getElementById("word");
 const wrongLettersEl = document.getElementById("wrong-letters");
-const playAgainBtn = document.getElementById("play-again");
+const playAgainBtn = document.getElementById("play-button");
 const popup = document.getElementById("popup-container");
 const notifcation = document.getElementById("notification-container");
 const finalMessage = document.getElementById("final-message");
@@ -90,6 +90,22 @@ window.addEventListener("keydown", (e) => {
       }
     }
   }
+});
+//Restart game and play again
+playAgainBtn.addEventListener("click", () => {
+  //empty the arrays
+  correctLetters.splice(0);
+  wrongLetters.splice(0);
+
+  //set a new word and display
+  selectedWord = words[Math.floor(Math.random() * words.length)];
+
+  displayWord();
+
+  //get rid of the hangman and the popup message
+  updateWrongLettersEl();
+
+  popup.style.display = "none";
 });
 
 displayWord();
