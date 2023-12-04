@@ -42,6 +42,13 @@ function updateWrongLettersEl() {
   ${wrongLetters.length > 0 ? `<p>Wrong</p>` : ""}
   ${wrongLetters.map((letter) => `<span>${letter}</span>`)}
   `;
+
+  figureParts.forEach((part, index) => {
+    const errors = wrongLetters.length;
+    if (index < errors) {
+      part.style.display = "block";
+    }
+  });
 }
 
 //Show notification
